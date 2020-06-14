@@ -35,12 +35,6 @@ public class DbToCSV {
 	      }
 	      writer.writeNext(linha1);
 	      
-	      
-//	      Mdata.getColumnName(1);
-//	      //Writing data to a csv file
-//	      String line1[] = {Mdata.getColumnName(1), Mdata.getColumnName(2), Mdata.getColumnName(3), Mdata.getColumnName(4), Mdata.getColumnName(5)};
-//	      writer.writeNext(line1);
-	      
 	      String data[] = new String[totalColunas];
 	      while(rs.next()) {
 	    	  	for(int i = 0; i < totalColunas; i++) {
@@ -66,25 +60,7 @@ public class DbToCSV {
 	    	  		}
 	    	  	}
     	  		writer.writeNext(data);
-
-//	    	  	int tipo = java.sql.Types.INTEGER;
-//	    	  	System.out.println("Tipo = " + tipo);
-//	    	  	System.out.print(rs.getMetaData().getColumnTypeName(1) + "|| ");
-//	    	  	System.out.print(rs.getMetaData().getColumnType(1) + ", ");
-//	         data[0] = new Integer(rs.getInt("ID")).toString();
-//	    	  	System.out.print(rs.getMetaData().getColumnTypeName(2) + "|| ");
-//	    	  	System.out.print(rs.getMetaData().getColumnType(2) + ", ");
-//	         data[1] = rs.getString("Name");
-//	    	  	System.out.print(rs.getMetaData().getColumnTypeName(3) + ", ");
-//	         data[2] = new Integer(rs.getInt("Salary")).toString();
-//	    	  	System.out.print(rs.getMetaData().getColumnTypeName(4) + ", ");
-//	         data[3] = rs.getString("start_date");
-//	    	  	System.out.print(rs.getMetaData().getColumnTypeName(5) + ", ");
-//	         data[4] = rs.getString("Dept");
-	         
-
 	      }
-	      //Flushing data from writer to file
 	      writer.flush();
 	      System.out.println("Data entered");
 	}
