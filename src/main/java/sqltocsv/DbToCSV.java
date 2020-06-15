@@ -49,12 +49,12 @@ public class DbToCSV {
 	    	  			case java.sql.Types.BIT		: data[i] = new Boolean(rs.getBoolean(i+1)).toString(); break;
 	    	  			case java.sql.Types.DECIMAL	: data[i] = new BigDecimal(rs.getBigDecimal(i+1).toBigInteger()).toString(); break;
 	    	  			case java.sql.Types.NUMERIC	: data[i] = new BigDecimal(rs.getBigDecimal(i+1).toBigInteger()).toString(); break;
-	    	  			case java.sql.Types.DATE		: data[i] = rs.getDate(i+1).toString();
-	    	  			case java.sql.Types.TIME		: data[i] = rs.getTime(i+1).toString();
-	    	  			case java.sql.Types.TIMESTAMP : data[i] = rs.getTimestamp(i+1).toString();
+	    	  			case java.sql.Types.DATE		: data[i] = rs.getDate(i+1).toString(); break;
+	    	  			case java.sql.Types.TIME		: data[i] = rs.getTime(i+1).toString(); break;
 	    	  			case java.sql.Types.VARCHAR 	: data[i] = rs.getString(i+1); break;
 	    	  			case java.sql.Types.NVARCHAR	: data[i] = rs.getString(i+1); break;
 	    	  			case java.sql.Types.CHAR		: data[i] = rs.getString(i+1); break;
+	    	  			case java.sql.Types.TIMESTAMP : data[i] = rs.getTimestamp(i+1).toString(); break;
 	    	  			case java.sql.Types.LONGNVARCHAR : data[i] = rs.getString(i+1); break;
 	    	  			default : data[i] = rs.getString(i+1);
 	    	  		}
@@ -63,5 +63,6 @@ public class DbToCSV {
 	      }
 	      writer.flush();
 	      System.out.println("Data entered");
+	      writer.close();
 	}
 }
