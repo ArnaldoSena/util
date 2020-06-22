@@ -15,7 +15,7 @@ import com.opencsv.CSVWriter;
 public class DbToCSV {
 	public static void main(String args[]) throws SQLException, IOException {
 	      //Getting the connection
-	      String url = "jdbc:postgresql://localhost/mydb";
+	      String url = "jdbc:postgresql://localhost/Caixa";
 	      Connection con = DriverManager.getConnection(url, "postgres", "postgres");
 	      System.out.println("Connection established......");
 	      //Creating the Statement
